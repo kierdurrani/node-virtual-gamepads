@@ -34,7 +34,7 @@ Virtual gamepad application
     log('info', 'diedAfter: ' + diedAfter);
     earlyDeathCount = diedAfter < 5000 ? earlyDeathCount + 1 : 0;
     log('info', 'earlyDeathCount: ' + earlyDeathCount);
-    if (earlyDeathCount >= 3) {
+    if (earlyDeathCount >= 50000) {
       log('error', 'Died too often too fast.');
       return server.stop();
     }
