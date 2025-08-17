@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TV Remote</title>
+  <style>
+    body {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .remote {
+      background-color: #333;
+      border-radius: 20px;
+      padding: 20px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      position: relative;
+    }
+.diamond-bg {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  z-index: 0;
+  opacity: 0.25;
+  pointer-events: none; /* <-- add this line */
+}
+
+    .remote h1 {
+      color: #fff;
+      font-size: 18px;
+      margin: 10px auto 20px;
+      text-align: center;
+    }
+
+    .button {
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 5px;
+      min-width: 80px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+	    .navpadbutton {
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px;
+      min-width: 45px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+	    .navpadbuttonback		{
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px;
+      min-width: 45px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background-color: #777;
+    }
+	.navpadbutton:hover {
+      background-color: #777;
+    }
+   .navpad-wrapper {
+         background-color: #888;
+      border: 2px solid #888;
+      border-radius: 55%;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-pad {
+      display: grid;
+      grid-template-columns: 60px 60px 60px;
+      grid-template-rows: 60px 60px 60px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-pad .button.blank {
+      background-color: transparent;
+      cursor: default;
+    }
+
+    .back-icon {
+      background-color: #555;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      border: none;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .back-icon img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .utility-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    .volume-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="remote">
+    <h1>TV Remote</h1>
+        <svg class="diamond-bg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+      <path d="
+        M 50 0 
+        C 70 35, 70 35, 100 50 
+        C 70 65, 70 65, 50 100 
+        C 30 65, 30 65, 0 50 
+        C 30 35, 30 35, 50 0
+        Z" 
+        fill="#aaa" />
+    </svg>
+    <div class="nav-pad">
+      <div class="button blank"></div>
+      <button class="navpadbutton">▲</button>
+      <div class="button blank"></div>
+
+      <button class="navpadbutton">◀</button>
+      <button class="navpadbutton">OK</button>
+      <button class="navpadbutton">▶</button>
+
+      <!-- Back Button with Curly Arrow Icon -->
+      <button class="navpadbuttonback">←</button>
+      <button class="navpadbutton">▼</button>
+      <div class="button blank"></div>
+    </div>
+    <div class="utility-buttons">
+      <div class="volume-row">
+        <button class="button">Vol +</button>
+        <button class="button">Vol -</button>
+      </div>
+      <button class="button">Subtitles</button>
+      <button class="button">Fullscreen</button>
+    </div>
+  </div>
+  <script src="js/virtual_keyboard_hub.js"></script>
+<script src="js/virtual_remote.js"></script>
+</body>
+</html>
